@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweets Ahoy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background: linear-gradient(135deg, #001f4d, #66b3ff); color: #fff; min-height: 100vh; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+    header img { height: 70px; filter: drop-shadow(0 0 15px #66b3ff); animation: logoPulse 3s infinite ease-in-out; }
+    nav a { margin-left: 20px; font-weight: 600; position: relative; transition: all 0.3s ease; }
+    nav a::after { content: ''; position: absolute; width: 0%; height: 2px; bottom: -5px; left: 0; background-color: #fff; transition: 0.3s; }
+    nav a:hover::after { width: 100%; }
+
+    /* Hero Section */
+    .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px 20px 50px; animation: fadeIn 2s ease-in; }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; text-shadow: 0 0 10px #66b3ff; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .btn { background: linear-gradient(135deg, #001f4d, #66b3ff); border: none; padding: 15px 30px; font-size: 1rem; font-weight: 600; color: #fff; cursor: pointer; border-radius: 10px; box-shadow: 0 0 10px rgba(102, 179, 255, 0.6); transition: all 0.4s ease; margin: 5px; }
+    .btn:hover { box-shadow: 0 0 25px #66b3ff; transform: scale(1.05); background: linear-gradient(135deg, #66b3ff, #001f4d); }
+
+    /* Logo Section */
+    .logo-section { text-align: center; padding: 80px 20px; animation: fadeIn 2s ease-in; }
+    .logo-section img { width: 250px; height: auto; border-radius: 20px; box-shadow: 0 0 35px rgba(102, 179, 255, 0.8); transition: all 0.6s ease; animation: logoGlow 3s infinite alternate ease-in-out; }
+    .logo-section img:hover { transform: scale(1.08); box-shadow: 0 0 50px #66b3ff; }
+    .logo-section p { font-size: 1.3rem; font-weight: 600; margin-top: 15px; text-shadow: 0 0 10px #001f4d; }
+
+    /* About Section */
+    .about { background: rgba(0,0,0,0.25); padding: 80px 20px; text-align: center; animation: fadeIn 2s ease-in; }
+    .about h2 { font-size: 2.5rem; margin-bottom: 20px; text-shadow: 0 0 10px #001f4d; }
+    .about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6; }
+
+    /* Gallery Section */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 80px 20px; animation: fadeIn 2s ease-in; }
+    .gallery img { width: 100%; border-radius: 15px; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 0 15px rgba(0, 31, 77, 0.5); }
+    .gallery img:hover { transform: scale(1.05); box-shadow: 0 0 25px #66b3ff; }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 20px; background: rgba(0,0,0,0.3); animation: fadeIn 2s ease-in; }
+    footer a { margin: 0 10px; color: #fff; font-size: 1.2rem; transition: 0.3s; }
+    footer a:hover { color: #66b3ff; }
+
+    /* Animations */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+    @keyframes logoGlow { 
+      0% { box-shadow: 0 0 25px #001f4d; } 
+      100% { box-shadow: 0 0 45px #66b3ff; } 
+    }
+    @keyframes logoPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) { 
+      .hero h1 { font-size: 2.2rem; } 
+      .about h2 { font-size: 2rem; } 
+      header img { height: 55px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="container">
+    <img src="logo.jpg" alt="Sweets Ahoy Logo">
+    <nav>
+      <a href="#logo-section">Logo</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Socials</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Sweets Ahoy</h1>
+    <p>Your modern sweet stand, bringing joy one treat at a time!</p>
+    <div>
+      <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">About Us</button>
+      <button class="btn" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'});">Gallery</button>
+    </div>
+  </section>
+
+  <!-- Logo Section -->
+  <section id="logo-section" class="logo-section">
+    <img src="logo.jpg" alt="Sweets Ahoy Logo">
+    <p>Sweets Ahoy Logo</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Sweets Ahoy</h2>
+    <p>
+      At Sweets Ahoy, we bring the sweetest experiences to your taste buds! Our modern sweet stand combines classic treats with innovative flavors, all served with a dash of fun and love. Every candy we create is crafted to make every moment a little brighter.
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery container">
+    <img src="sweet1.jpg" alt="Sweet 1">
+    <img src="sweet2.jpg" alt="Sweet 2">
+    <img src="sweet3.jpg" alt="Sweet 3">
+    <img src="sweet4.jpg" alt="Sweet 4">
+  </section>
+
+  <!-- Footer / Social Media -->
+  <footer id="contact">
+    <p>Follow us on social media:</p>
+    <a href="https://www.tiktok.com/@sweetsahoyuk" target="_blank">TikTok</a>
+    <p>&copy; 2025 Sweets Ahoy. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
